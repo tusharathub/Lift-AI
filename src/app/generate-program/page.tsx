@@ -8,11 +8,18 @@ import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { useEffect, useRef, useState } from "react"
 
+type MessageData = {
+  type: string;
+  transcriptType: string;
+  transcript: string;
+  role: string;
+};
+
 const GenerateProgramPage = () => {
   const [callActive, setCallActive] = useState(false);
   const [connecting, setConnecting] = useState(false);
   const [isSpeaking, setIsSpeaking] = useState(false);
-  const [messages, setMessages] = useState<any[]>([]);
+  const [messages, setMessages] = useState<{ content: string; role: string }[]>([]);
   const [callEnded, setCallEnded] = useState(false);
 
   const { user } = useUser() ;
@@ -66,7 +73,7 @@ const GenerateProgramPage = () => {
       setIsSpeaking(false)
     }
 
-    const handleMessage = (message: any) => {
+    const handleMessage = (message: MessageData) => {
       if(message.type === "transcript" && message.transcriptType ==="final") {
         const newMessage = {content:message.transcript, role: message.role};
         setMessages(prev=> [...prev, newMessage])

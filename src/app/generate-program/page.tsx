@@ -15,7 +15,7 @@ const GenerateProgramPage = () => {
   const [messages, setMessages] = useState<any[]>([]);
   const [callEnded, setCallEnded] = useState(false);
 
-  const{ user} = useUser
+  const { user } = useUser() ;
   const router = useRouter();
 
   const messageContainerRef = useRef<HTMLDivElement>(null);

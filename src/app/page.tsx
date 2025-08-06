@@ -1,6 +1,5 @@
 import TerminalOverlay from "@/components/TerminalOverlay";
 import { Button } from "@/components/ui/button";
-import UserPrograms from "@/components/UserPrograms";
 import { ArrowRightIcon } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -87,11 +86,12 @@ const HomePage = () => {
               <div className="relative aspect-square max-w-lg mx-auto">
                 <div className="relative overflow-hidden rounded-lg bg-cyber-black">
                   <Image
-                    src="https://images.pexels.com/photos/9834376/pexels-photo-9834376.jpeg"
+                    src="/pexels-pixabay-373543.jpg"
+                    width={200}
+                    height={200}
                     alt="AI Fitness Coach"
                     className="size-full object-cover object-center"
                   />
-
                   {/* SCAN LINE */}
                   <div className="absolute inset-0 bg-[linear-gradient(transparent_0%,transparent_calc(50%-1px),var(--cyber-glow-primary)_50%,transparent_calc(50%+1px),transparent_100%)] bg-[length:100%_8px] animate-scanline pointer-events-none" />
 
@@ -117,7 +117,6 @@ const HomePage = () => {
         </div>
       </section>
 
-      <UserPrograms />
     </div>
   );
 };

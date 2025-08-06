@@ -4,7 +4,6 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { vapi } from "@/lib/vapi";
 import { useUser } from "@clerk/nextjs";
-import { tr } from "framer-motion/client";
 import { useRouter } from "next/navigation";
 import { useEffect, useRef, useState } from "react"
 
